@@ -2,7 +2,10 @@ import { Box, Badge, VStack, HStack } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import ProductRating from "components/Home/ProductRating";
+import { useHistory } from "react-router-dom";
+
 const ProductCard = ({ data }) => {
+  const history = useHistory();
   return (
     <Box
       borderRadius="lg"
@@ -34,7 +37,13 @@ const ProductCard = ({ data }) => {
           {data.isOnSale && <Badge colorScheme="red">On Sale</Badge>}
         </HStack>
       </VStack>
-      <Button colorScheme="orange" width="50%">
+      <Button
+        colorScheme="orange"
+        width="50%"
+        onClick={() => {
+          history.push(`/item/${data._id}`);
+        }}
+      >
         View Item
       </Button>
     </Box>

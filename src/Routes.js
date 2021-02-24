@@ -7,6 +7,7 @@ import {
 import Home from "pages/home";
 import Deals from "pages/deals";
 import Cart from "pages/cart";
+import ProductDetails from "pages/productDetails";
 const Routes = () => {
   return (
     <Router>
