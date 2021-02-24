@@ -10,6 +10,9 @@ const Header = () => {
       color="white"
       px="1rem"
       py="1rem"
+      width="100vw"
+      position="fixed"
+      zIndex="10"
     >
       <HStack spacing="0.5rem">
         <img src={Logo} width="20px" alt="" />
