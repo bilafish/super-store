@@ -1,4 +1,4 @@
-const fetchItems = ({ pageSize, startIndex, isOnSale }) => {
+export const fetchItems = ({ pageSize, startIndex, isOnSale }) => {
   const isOnSaleQuery = isOnSale === true ? "&isOnSale=true" : "";
   return fetch(
     `https://gp-super-store-api.herokuapp.com/item/list?size=${pageSize}&from=${startIndex}${isOnSaleQuery}`
@@ -10,4 +10,11 @@ const fetchItems = ({ pageSize, startIndex, isOnSale }) => {
     });
 };
 
-export default fetchItems;
+export const fetchItemById = (id) => {
+  return fetch(`https://gp-super-store-api.herokuapp.com/item/${id}`)
+    .then((res) => res.json())
+    .then((json) => json)
+    .catch((err) => {
+      throw new Error(err.message ?? "Fetch item by id failed");
+    });
+};
