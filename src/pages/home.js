@@ -2,7 +2,7 @@ import Header from "components/Header";
 import { useEffect, useState } from "react";
 import fetchItems from "services/items";
 import ProductCard from "components/Home/ProductCard";
-import { Center } from "@chakra-ui/react";
+import { Center, Flex } from "@chakra-ui/react";
 
 const Home = () => {
   // COMPONENT STATES
@@ -25,22 +25,22 @@ const Home = () => {
       }
     };
     fetchProducts();
-  }, []);
+  }, [currentPage]);
   return (
     <>
       <Header />
       <Center
         width="100%"
         height="100vh"
-        display="flex"
-        flexWrap="wrap"
         px="5rem"
         pt="5rem"
         overflowY="scroll"
       >
-        {products.map((item) => (
-          <ProductCard key={item._id} data={item} />
-        ))}
+        <Flex flexWrap="wrap" height="100%" justifyContent="space-between">
+          {products.map((item) => (
+            <ProductCard key={item._id} data={item} />
+          ))}
+        </Flex>
       </Center>
     </>
   );
