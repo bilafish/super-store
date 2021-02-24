@@ -13,6 +13,7 @@ const Pagination = ({
         colorScheme="orange"
         onClick={() => {
           setCurrentPage(1);
+          window.scrollTo(0, 0);
         }}
         isDisabled={currentPage <= 1}
       >
@@ -22,6 +23,7 @@ const Pagination = ({
         colorScheme="orange"
         onClick={() => {
           setCurrentPage(currentPage - 1);
+          window.scrollTo(0, 0);
         }}
         isDisabled={currentPage <= 1}
       >{`<`}</Button>
@@ -32,6 +34,7 @@ const Pagination = ({
         colorScheme="orange"
         onClick={() => {
           setCurrentPage(currentPage + 1);
+          window.scrollTo(0, 0);
         }}
         isDisabled={!hasNext}
       >{`>`}</Button>
@@ -39,6 +42,7 @@ const Pagination = ({
         colorScheme="orange"
         onClick={() => {
           setCurrentPage(lastPage);
+          window.scrollTo(0, 0);
         }}
         isDisabled={currentPage >= lastPage}
       >
