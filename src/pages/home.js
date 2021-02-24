@@ -2,7 +2,7 @@ import Header from "components/Header";
 import { useEffect, useState } from "react";
 import fetchItems from "services/items";
 import ProductCard from "components/Home/ProductCard";
-import { Center, Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 const Home = () => {
   // COMPONENT STATES
@@ -29,19 +29,24 @@ const Home = () => {
   return (
     <>
       <Header />
-      <Center
+      <Box
         width="100%"
-        height="100vh"
+        height="calc(100vh - 68px)"
         px="5rem"
-        pt="5rem"
-        overflowY="scroll"
+        pb="1rem"
+        position="fixed"
+        top="68px"
+        bottom="0"
+        overflowY="auto"
+        textAlign="center"
       >
-        <Flex flexWrap="wrap" height="100%" justifyContent="space-between">
+        <Flex flexWrap="wrap" justifyContent="space-between">
           {products.map((item) => (
             <ProductCard key={item._id} data={item} />
           ))}
         </Flex>
-      </Center>
+        <p>Bottom</p>
+      </Box>
     </>
   );
 };
