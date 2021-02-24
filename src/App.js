@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import Routes from "Routes";
 
 function App() {
