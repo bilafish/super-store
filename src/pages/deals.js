@@ -1,10 +1,10 @@
 import Header from "components/Header";
-const Home = () => {
+const Deals = () => {
   return (
     <div>
       <Header />
-      <h1>Home</h1>
+      <h1>Deals</h1>
     </div>
   );
 };
-export default Home;
+export default Deals;
