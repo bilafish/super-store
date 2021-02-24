@@ -14,6 +14,7 @@ const Routes = () => {
         <Route exact path="/home" component={Home} />
         <Route exact path="/deals" component={Deals} />
         <Route exact path="/cart" component={Cart} />
+        <Route exact path="/item/:itemId" component={ProductDetails} />
         <Route
           render={() => {
             return <Redirect to={{ pathname: "/home" }} />;
