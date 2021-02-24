@@ -1,6 +1,8 @@
 # Super Store
 
-Super Store is a simple e-commerce store.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/417ae40e-5988-4448-9938-32699a567ff2/deploy-status)](https://app.netlify.com/sites/quirky-northcutt-b71124/deploys)
+
+[Super Store](https://quirky-northcutt-b71124.netlify.app/) is a simple e-commerce store.
 
 ## Technologies
 
