@@ -45,7 +45,7 @@ const Home = () => {
         overflowY="auto"
         textAlign="center"
       >
-        {!isLoading && (
+        {!isLoading && products.length > 0 && (
           <>
             <Flex flexWrap="wrap" justifyContent="space-between">
               {products.map((item) => (
@@ -61,6 +61,7 @@ const Home = () => {
             />
           </>
         )}
+        {!isLoading && products.length <= 0 && <p>Oops, no products found.</p>}
       </Box>
     </>
   );
