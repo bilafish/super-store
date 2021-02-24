@@ -1,6 +1,6 @@
 import Header from "components/Header";
 import { useEffect, useState } from "react";
-import fetchItems from "services/items";
+import { fetchItems } from "services/items";
 import ProductCard from "components/Home/ProductCard";
 import { Box, Flex } from "@chakra-ui/react";
 import Pagination from "components/Pagination";
