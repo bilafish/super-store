@@ -63,7 +63,7 @@ const Deals = () => {
             />
           </>
         )}
-        {isLoading && products.length <= 0 && (
+        {!isLoading && products.length <= 0 && (
           <p>Oops, there are no products on sale right now.</p>
         )}
       </Box>
