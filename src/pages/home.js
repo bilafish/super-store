@@ -3,23 +3,25 @@ import { useEffect, useState } from "react";
 import fetchItems from "services/items";
 import ProductCard from "components/Home/ProductCard";
 import { Box, Flex } from "@chakra-ui/react";
-
+import Pagination from "components/Pagination";
 const Home = () => {
   // COMPONENT STATES
   const [products, setProducts] = useState([]);
   const [hasNext, setHasNext] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [lastPage, setLastPage] = useState(1);
   const paginationSize = 10;
   // USEEFFECTS
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const items = await fetchItems({
+        const result = await fetchItems({
           pageSize: paginationSize,
           startIndex: (currentPage - 1) * paginationSize,
         });
-        setProducts(items);
-        console.log(items);
+        setProducts(result.items);
+        setHasNext(result.hasMore);
+        setLastPage(Math.ceil(result.total / paginationSize));
       } catch (err) {
         console.log(err);
       }
@@ -33,7 +35,7 @@ const Home = () => {
         width="100%"
         height="calc(100vh - 68px)"
         px="5rem"
-        pb="1rem"
+        pb="5rem"
         position="fixed"
         top="68px"
         bottom="0"
@@ -45,7 +47,13 @@ const Home = () => {
             <ProductCard key={item._id} data={item} />
           ))}
         </Flex>
-        <p>Bottom</p>
+        <Pagination
+          currentPage={currentPage}
+          pageSize={paginationSize}
+          hasNext={hasNext}
+          lastPage={lastPage}
+          setCurrentPage={setCurrentPage}
+        />
       </Box>
     </>
   );
