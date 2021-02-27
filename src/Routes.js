@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "pages/home";
 import Deals from "pages/deals";
 import Cart from "pages/cart";
@@ -14,14 +9,18 @@ const Routes = () => {
     <Router>
       <Header />
       <Switch>
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/deals" component={Deals} />
-        <Route exact path="/cart" component={Cart} />
-        <Route
-          render={() => {
-            return <Redirect to={{ pathname: "/home" }} />;
-          }}
-        />
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/deals">
+          <Deals />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
+        </Route>
+        <Route>
+          <Home />
+        </Route>
       </Switch>
     </Router>
   );
