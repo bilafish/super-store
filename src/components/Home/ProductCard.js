@@ -23,6 +23,10 @@ const ProductCard = ({ data }) => {
         boxSize="250px"
         fit="contain"
         fallbackSrc="https://via.placeholder.com/250"
+        loading="lazy"
+        onError={(e) => {
+          e.target.src = "https://via.placeholder.com/250";
+        }}
       />
       <VStack
         spacing="0.2rem"
