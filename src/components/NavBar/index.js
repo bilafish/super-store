@@ -9,7 +9,12 @@ const NavBar = () => {
   return (
     <HStack spacing="24px">
       {navItems.map((item) => (
-        <NavLink key={item.id} to={item.path} activeStyle={activeLinkStyle}>
+        <NavLink
+          key={item.id}
+          exact
+          to={item.path}
+          activeStyle={activeLinkStyle}
+        >
           {item.name}
         </NavLink>
       ))}
