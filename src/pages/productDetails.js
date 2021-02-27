@@ -16,7 +16,6 @@ import {
   Alert,
   AlertIcon,
   AlertTitle,
-  AlertDescription,
   CloseButton,
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
